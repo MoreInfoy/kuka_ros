@@ -1,0 +1,117 @@
+arm:
+  arm_joint_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - joint1
+      - joint2
+      - joint3
+      - joint4
+      - joint5
+      - joint6
+
+    gains:
+      joint1:   {p: 10, i: 0.0001, d: 0.005, i_clamp: 0.0}
+      joint2:   {p: 10, i: 0.0001, d: 0.005, i_clamp: 0.0}
+      joint3:   {p: 10, i: 0.0001, d: 0.005, i_clamp: 0.0}
+      joint4:   {p: 10, i: 0.0001, d: 0.005, i_clamp: 0.0}
+      joint5:   {p: 10, i: 0.0001, d: 0.005, i_clamp: 0.0}
+      joint6:   {p: 10, i: 0.0001, d: 0.005, i_clamp: 0.0}
+
+    
+    # constraints:
+    #     goal_time: 0.6
+    #     stopped_velocity_tolerance: 0.05
+    #     joint1: {trajectory: 0.1, goal: 0.1}
+    #     joint2: {trajectory: 0.1, goal: 0.1}
+    #     joint3: {trajectory: 0.1, goal: 0.1}
+    #     joint4: {trajectory: 0.1, goal: 0.1}
+    #     joint5: {trajectory: 0.1, goal: 0.1}
+    #     joint6: {trajectory: 0.1, goal: 0.1}
+    # stop_trajectory_duration: 0.5
+    # state_publish_rate:  25
+    # action_monitor_rate: 10
+
+
+  gripper_effort_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - gripper_finger1_joint
+    constraints:
+        goal_time: 0.6
+        stopped_velocity_tolerance: 0.05
+        gripper_finger1_joint: {trajectory: 0.1, goal: 0.1}
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
+
+    gains:
+        gripper_finger1_joint:   {p: 10, i: 0.0001, d: 0.005, i_clamp: 0.0}
+
+    
+  # gripper_position_controller:
+  #   type: position_controllers/JointTrajectoryController
+  #   joints:
+  #     - gripper_finger1_joint
+  #   constraints:
+  #       goal_time: 0.6
+  #       stopped_velocity_tolerance: 0.05
+  #       gripper_finger1_joint: {trajectory: 0.1, goal: 0.1}
+  #   stop_trajectory_duration: 0.5
+  #   state_publish_rate:  25
+  #   action_monitor_rate: 10
+
+  #   gains:
+  #       gripper_finger1_joint:   {p: 10, i: 0.0001, d: 0.005, i_clamp: 0.0}
+
+
+
+  # arm_joint_vel_controller:
+  #   type: "velocity_controllers/JointTrajectoryController"
+  #   joints:
+  #     - joint1
+  #     - joint2
+  #     - joint3
+  #     - joint4
+  #     - joint5
+  #     - joint6
+
+  #   gains:
+  #     joint1:   {p: 100.0, i: 2.0, d: 0.1, i_clamp: 0.0}
+  #     joint2:   {p: 100.0, i: 2.0, d: 0.1, i_clamp: 0.0}
+  #     joint3:   {p: 100.0, i: 2.0, d: 0.1, i_clamp: 0.0}
+  #     joint4:   {p: 100.0, i: 2.0, d: 0.1, i_clamp: 0.0}
+  #     joint5:   {p: 100.0, i: 2.0, d: 0.1, i_clamp: 0.0}
+  #     joint6:   {p: 100.0, i: 2.0, d: 0.1, i_clamp: 0.0}
+  #   constraints:
+  #       goal_time: 0.6
+  #       stopped_velocity_tolerance: 0.05
+  #       joint1: {trajectory: 0.1, goal: 0.1}
+  #       joint2: {trajectory: 0.1, goal: 0.1}
+  #       joint3: {trajectory: 0.1, goal: 0.1}
+  #       joint4: {trajectory: 0.1, goal: 0.1}
+  #       joint5: {trajectory: 0.1, goal: 0.1}
+  #       joint6: {trajectory: 0.1, goal: 0.1}
+  #   stop_trajectory_duration: 0.5
+  #   state_publish_rate:  25
+  #   action_monitor_rate: 10
+
+
+  # gripper_vel_controller:
+  #   type: velocity_controllers/JointTrajectoryController
+  #   joints:
+  #     - gripper_finger1_joint
+  #   constraints:
+  #       goal_time: 0.6
+  #       stopped_velocity_tolerance: 0.05
+  #       gripper_finger1_joint: {trajectory: 0.1, goal: 0.1}
+  #   stop_trajectory_duration: 0.5
+  #   state_publish_rate:  25
+  #   action_monitor_rate: 10
+
+  #   gains:
+  #       gripper_finger1_joint:   {p: 100.0, i: 0.5, d: 1.0, i_clamp: 0.0}
+
+
+
+
+

@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: image_segment
+Description: Description of image_segment
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: cv_bridge image_transport roscpp

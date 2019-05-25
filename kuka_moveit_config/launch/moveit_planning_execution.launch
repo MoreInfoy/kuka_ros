@@ -1,0 +1,28 @@
+<launch>
+    # The planning and execution components of MoveIt! configured to
+    # publish the current configuration of the robot (simulated or real)
+    # and the current state of the world as seen by the planner
+    
+    <arg name="sim" default="false" />
+    <arg name="debug" default="false" />
+    <!-- By default, we do not start a database (it can be large) -->
+    <arg name="demo" default="false" />
+
+    <include file="$(find kuka_moveit_config)/launch/move_group.launch">
+        <!-- <arg name="publish_monitored_planning_scene" value="true"/> -->
+        <arg name="debug" default="$(arg debug)" />
+    </include>
+
+    # The visualization component of MoveIt!
+    <include file="$(find kuka_moveit_config)/launch/moveit_rviz.launch"/>
+
+    <!-- We do not have a robot connected, so publish fake joint states -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="/use_gui" value="false"/>
+        <rosparam param="/source_list">[/arm/joint_states]</rosparam>
+    </node>
+
+      <!-- If database loading was enabled, start mongodb as well -->
+    <include file="$(find robotiq_85_moveit_config)/launch/default_warehouse_db.launch" if="$(arg demo)"/>
+
+</launch>

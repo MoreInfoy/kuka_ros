@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: kuka_description
+    relative_path: urdf/arm.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/arm.srdf
+  CONFIG:
+    author_name: Yang Shunpeng
+    author_email: shunpengyang@163.com
+    generated_timestamp: 1555465644

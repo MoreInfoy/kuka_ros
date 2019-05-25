@@ -1,0 +1,23 @@
+<launch>
+    <rosparam file="$(find kuka_gazebo)/config/gazebo_ros_control.yaml" command="load"/>
+    <!-- Launch Gazebo  -->
+    <include file="$(find kuka_gazebo)/launch/arm_world.launch" />
+
+    <!-- ros_control arm launch file -->
+    <include file="$(find kuka_gazebo)/launch/arm_gazebo_states.launch" />
+
+    <!-- ros_control trajectory control dof arm launch file -->
+    <include file="$(find kuka_gazebo)/launch/arm_trajectory_controller.launch" />
+
+    <!-- moveit launch file -->
+    <include file="$(find kuka_moveit_config)/launch/moveit_planning_execution.launch" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find kuka_description)/urdf_new.rviz" required="true" />
+
+    <node name="selectTarget_sim" pkg="image_segment" type="selectTarget"/>
+
+    <node name="display_result_sim" pkg="image_segment" type="display_result"/>
+
+    <node name="tf_transform" pkg="image_segment" type="tf_transform"/>
+
+</launch>

@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find kuka_resources)/urdf/common_constants.xacro"/>
+    <xacro:include filename="$(find kuka_resources)/urdf/common_materials.xacro"/>
+
+    <!-- Inertial matrix -->
+    <xacro:macro name="inertial_matrix" params="mass">
+        <inertial>
+            <mass value="${mass}"/>
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+        </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="transmission_block" params="joint_name">
+        <transmission name="tran1">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${joint_name}">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="motor1">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+    </xacro:macro>
+
+    <xacro:macro name="kuka_kr6r700sixx" params="prefix">
+        <joint name="${prefix}bottom_joint" type="fixed">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <parent link="base_link"/>
+            <child link="bottom_link"/>
+        </joint>
+
+        <link name="${prefix}bottom_link">
+            <visual>
+                <origin xyz=" 0 0 -0.02" rpy="0 0 0"/>
+                <geometry>
+                    <box size="1 1 0.02"/>
+                </geometry>
+                <material name="Brown"/>
+            </visual>
+            <collision>
+                <origin xyz=" 0 0 -0.02" rpy="0 0 0"/>
+                <geometry>
+                    <box size="1 1 0.02"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_matrix mass="500"/>
+        </link>
+
+        <link name="${prefix}base_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/visual/base_link.dae"/>
+                </geometry>
+                <xacro:material_kuka_pedestal/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/collision/base_link.stl"/>
+                </geometry>
+            </collision>
+        </link>
+        <link name="${prefix}link_1">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/visual/link_1.dae"/>
+                </geometry>
+                <xacro:material_kuka_orange/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/collision/link_1.stl"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_matrix mass="1"/>
+        </link>
+        <link name="${prefix}link_2">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6r700sixx/visual/link_2.dae"/>
+                </geometry>
+                <xacro:material_kuka_orange/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6r700sixx/collision/link_2.stl"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_matrix mass="1"/>
+        </link>
+        <link name="${prefix}link_3">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/visual/link_3.dae"/>
+                </geometry>
+                <xacro:material_kuka_orange/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/collision/link_3.stl"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_matrix mass="1"/>
+        </link>
+        <link name="${prefix}link_4">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6r700sixx/visual/link_4.dae"/>
+                </geometry>
+                <xacro:material_kuka_orange/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6r700sixx/collision/link_4.stl"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_matrix mass="1"/>
+        </link>
+        <link name="${prefix}link_5">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/visual/link_5.dae"/>
+                </geometry>
+                <xacro:material_kuka_orange/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/collision/link_5.stl"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_matrix mass="1"/>
+        </link>
+        <link name="${prefix}link_6">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/visual/link_6.dae"/>
+                </geometry>
+                <xacro:material_kuka_pedestal/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://kuka_kr6_support/meshes/kr6_agilus/collision/link_6.stl"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_matrix mass="1"/>
+        </link>
+        <!-- This frame corresponds to the $FLANGE coordinate system in KUKA KRC controllers. -->
+        <link name="${prefix}tool0"/>
+
+        <joint name="${prefix}joint_a1" type="revolute">
+            <origin xyz="0 0 0.4" rpy="0 0 0"/>
+            <parent link="${prefix}base_link"/>
+            <child link="${prefix}link_1"/>
+            <axis xyz="0 0 -1"/>
+            <limit lower="${-170 * DEG2RAD}" upper="${170 * DEG2RAD}" effort="0" velocity="${360 * DEG2RAD}"/>
+        </joint>
+        <joint name="${prefix}joint_a2" type="revolute">
+            <origin xyz="0.025 0 0" rpy="0 0 0"/>
+            <parent link="${prefix}link_1"/>
+            <child link="${prefix}link_2"/>
+            <axis xyz="0 1 0"/>
+            <limit lower="${-190 * DEG2RAD}" upper="${45 * DEG2RAD}" effort="0" velocity="${300 * DEG2RAD}"/>
+        </joint>
+        <joint name="${prefix}joint_a3" type="revolute">
+            <origin xyz="0.315 0 0" rpy="0 0 0"/>
+            <parent link="${prefix}link_2"/>
+            <child link="${prefix}link_3"/>
+            <axis xyz="0 1 0"/>
+            <limit lower="${-120 * DEG2RAD}" upper="${156 * DEG2RAD}" effort="0" velocity="${360 * DEG2RAD}"/>
+        </joint>
+        <joint name="${prefix}joint_a4" type="revolute">
+            <origin xyz="0 0 0.035" rpy="0 0 0"/>
+            <parent link="${prefix}link_3"/>
+            <child link="${prefix}link_4"/>
+            <axis xyz="-1 0 0"/>
+            <limit lower="${-185 * DEG2RAD}" upper="${185 * DEG2RAD}" effort="0" velocity="${381 * DEG2RAD}"/>
+        </joint>
+        <joint name="${prefix}joint_a5" type="revolute">
+            <origin xyz="0.365 0 0" rpy="0 0 0"/>
+            <parent link="${prefix}link_4"/>
+            <child link="${prefix}link_5"/>
+            <axis xyz="0 1 0"/>
+            <limit lower="${-120 * DEG2RAD}" upper="${120 * DEG2RAD}" effort="0" velocity="${388 * DEG2RAD}"/>
+        </joint>
+        <joint name="${prefix}joint_a6" type="revolute">
+            <origin xyz="0.080 0 0" rpy="0 0 0"/>
+            <parent link="${prefix}link_5"/>
+            <child link="${prefix}link_6"/>
+            <axis xyz="-1 0 0"/>
+            <limit lower="${-350 * DEG2RAD}" upper="${350 * DEG2RAD}" effort="0" velocity="${615 * DEG2RAD}"/>
+        </joint>
+        <joint name="${prefix}joint_a6-tool0" type="fixed">
+            <parent link="${prefix}link_6"/>
+            <child link="${prefix}tool0"/>
+            <origin xyz="0 0 0" rpy="0 ${90 * DEG2RAD} 0"/>
+        </joint>
+
+        <!-- ROS base_link to KUKA $ROBROOT coordinate system transform -->
+        <link name="${prefix}base"/>
+        <joint name="${prefix}base_link-base" type="fixed">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <parent link="${prefix}base_link"/>
+            <child link="${prefix}base"/>
+        </joint>
+
+        <gazebo reference="${prefix}bottom_link">
+            <material>Gazebo/Blue</material>
+        </gazebo>
+        <gazebo reference="${prefix}base_link">
+            <xacro:material_kuka_pedestal/>
+        </gazebo>
+        <gazebo reference="${prefix}link_1">
+            <xacro:material_kuka_orange/>
+        </gazebo>
+        <gazebo reference="${prefix}link_2">
+            <xacro:material_kuka_orange/>
+        </gazebo>
+        <gazebo reference="${prefix}link_3">
+            <xacro:material_kuka_orange/>
+        </gazebo>
+        <gazebo reference="${prefix}link_4">
+            <xacro:material_kuka_orange/>
+        </gazebo>
+        <gazebo reference="${prefix}link_5">
+            <xacro:material_kuka_orange/>
+        </gazebo>
+        <gazebo reference="${prefix}link_6">
+            <xacro:material_kuka_orange/>
+        </gazebo>
+
+        <xacro:transmission_block joint_name="${prefix}joint_a1"/>
+        <xacro:transmission_block joint_name="${prefix}joint_a2"/>
+        <xacro:transmission_block joint_name="${prefix}joint_a3"/>
+        <xacro:transmission_block joint_name="${prefix}joint_a4"/>
+        <xacro:transmission_block joint_name="${prefix}joint_a5"/>
+        <xacro:transmission_block joint_name="${prefix}joint_a6"/>
+
+        <gazebo>
+            <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+                <robotNamespace>/kuka_kr6r700sixx</robotNamespace>
+                <legacyModeNS>true</legacyModeNS>
+            </plugin>
+        </gazebo>
+    </xacro:macro>
+</robot>

@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/nimpng/catkin_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/nimpng/catkin_ws/src/gazebo_grasp_plugin/include",
+                "/home/nimpng/catkin_ws/src/gazebo_version_helpers/include",
+                "/home/nimpng/catkin_ws/src/iai_kinect2/kinect2_bridge/include",
+                "/home/nimpng/catkin_ws/src/iai_kinect2/kinect2_registration/include",
+                "/home/nimpng/catkin_ws/src/iai_kinect2/kinect2_calibration/include",
+                "/home/nimpng/catkin_ws/src/kuka_image_processing/include",
+                "/home/nimpng/catkin_ws/src/kuka_rsi_hw_interface/include",
+                "/home/nimpng/catkin_ws/src/robotiq_85_simulation/roboticsgroup_gazebo_plugins/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

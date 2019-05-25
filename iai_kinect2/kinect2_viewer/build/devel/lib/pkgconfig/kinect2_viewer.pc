@@ -1,0 +1,8 @@
+prefix=/home/nimpng/catkin_ws/src/iai_kinect2/kinect2_viewer/build/devel
+
+Name: kinect2_viewer
+Description: Description of kinect2_viewer
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/nimpng/catkin_ws/src/iai_kinect2/kinect2_viewer/build/devel/lib 
+Requires: 

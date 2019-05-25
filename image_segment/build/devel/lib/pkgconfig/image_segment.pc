@@ -1,0 +1,8 @@
+prefix=/home/nimpng/kuka_ros/src/image_segment/build/devel
+
+Name: image_segment
+Description: Description of image_segment
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/nimpng/kuka_ros/src/image_segment/build/devel/lib 
+Requires: cv_bridge image_transport roscpp

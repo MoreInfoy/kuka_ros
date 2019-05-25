@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nimpng/catkin_ws/src/iai_kinect2/kinect2_viewer/build/devel/setup.sh

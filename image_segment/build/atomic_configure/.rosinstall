@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nimpng/kuka_ros/src/image_segment/build/devel/setup.sh
