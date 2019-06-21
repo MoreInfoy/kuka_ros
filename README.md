@@ -1,7 +1,7 @@
 # Combine ROS-Melodic on Ubuntu 18.04.02 with KUKA KR6 700 SIXX
 
 >**Prerequisite knowledge:** \
-ROS Programming  , C++ and python*
+ROS Programming  , C++ and python
 
 >**Requirements:**\
 Opencv 4.0 and ROS Melodic.
