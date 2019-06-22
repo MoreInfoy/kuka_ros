@@ -1,4 +1,5 @@
 # Combine ROS-Melodic on Ubuntu 18.04.02 with KUKA KR6 700 SIXX
+![image](https://github.com/NimaPng/kuka_ros/blob/master/env.png)
 
 >**Prerequisite knowledge:** \
 ROS Programming  , C++ and python
@@ -109,9 +110,50 @@ Opencv 4.0 and ROS Melodic.
 ---
 ---
 
-## *The Process of building packages*
+## *The Process of building packages: help you to correct some errors*
 
-<video id="video" controls="" preload="none" poster="http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.jpg">
-      <source id="mp4" src="https://pan.baidu.com/play/video#/video?path=%2F%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%2FBuild_packages.mp4&t=-1" type="video/mp4">
-      </video>
+    link: https://pan.baidu.com/s/1WLWzZg3ccNwFzP3bupr_Mg
+    keys: 1d4e
 
+---
+---
+
+## *launch the simulation environment*
+
+    link: https://pan.baidu.com/s/1NYKOJnCEZ4wD1qHstpTycw 
+    keys: 52qk
+
+---
+---
+---
+---
+
+# KUKA CONFIG
+
+> Install workvisual
+
+> Read the following operation manual
+
+    link: https://pan.baidu.com/s/10C-aRHcBKkEqFARYVNCZWA
+    keys: xeqc
+
+*Note: All config could be done only if you signed in the controller system as an engineer*
+
+---
+---
+
+### Connect the controller with your computer
+
+*Note: Change the firewall settings to allow corresponding Ethernet to access any network*
+
+
+1. Connect your computer and KUKA Robot with network cable
+
+2. Change the IP address of the local Ethernet to be same the network segment as the KUKA Robot. For example, if the IP address of KUKA Robot is 192.168.1.101, then IP address of your computer's Ethernet should be 192.168.1.x (0<x<255 and x != 101)
+
+3. Check the connection, you can use `Ping 192.168.1.101`.
+
+---
+---
+
+### Install KOP in workvisual
