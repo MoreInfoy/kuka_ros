@@ -106,4 +106,9 @@ Opencv 4.0 and ROS Melodic.
 
 4. When finshing building, you can use ros command like `roslaunch`,`rosrun` to run the package on your own computer.
 
+---
+---
 
+## *The Process of building packages*
+
+<iframe width="560" height="315" src="https://pan.baidu.com/play/video#/video?path=%2F%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%2FBuild_packages.mp4&t=-1" frameborder="0" allowfullscreen></iframe>
