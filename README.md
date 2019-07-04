@@ -156,4 +156,13 @@ Opencv 4.0 and ROS Melodic.
 ---
 ---
 
-### Install KOP in workvisual
+### How to use workvisual
+* Download and install Workvisual 4.x. <https://www.kuka.com/zh-tw/services/downloads?terms=product_name:KUKA.WorkVisual&q=>
+
+* Install KOP in Workviusal. You can copy the KOP file from the D:/the/package/you/used/like/EthernetKRL on the controller KR C4, or download from the following link:
+    > link: https://pan.baidu.com/s/1fvfy3Gk5OHXuUdscAd-uxg  \
+    keys: uiii
+
+    The following video will show you how to install KOP.
+    > link: https://pan.baidu.com/s/1EBUf_UTtueaKWCdYNvJdXg \
+    keys: j9s6 
